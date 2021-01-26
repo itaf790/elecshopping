@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "83940167567",
+    "project_id": "elechshoppingg",
+    "storage_bucket": "elechshoppingg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83940167567:android:6cf481288ab07489f905fa",
+        "android_client_info": {
+          "package_name": "com.example.elechshopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83940167567-3in7ss7eortffv07dv1stss64ul6ai6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjYUgHsjKxOaS0MJYQBMbnZXidiu2DsPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83940167567-3in7ss7eortffv07dv1stss64ul6ai6s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backm"
+    android:id="@+id/r1"
+    tools:context=".HomeActivity">
+
+
+
+
+        <TextView
+            android:id="@+id/elecshopping"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:text="Elec Shopping"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginTop="12dp"/>
+
+    <ImageView
+        android:id="@+id/person"
+        android:layout_width="30dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+
+        android:layout_marginEnd="-2dp"
+        android:layout_toStartOf="@id/elecshopping"
+        android:src="@drawable/ic_baseline_person_add_24" />
+
+    <ImageView
+        android:id="@+id/language"
+        android:layout_width="25dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="35dp"
+        android:layout_toEndOf="@id/elecshopping"
+        android:src="@drawable/ic_baseline_language_24" />
+
+
+    <com.synnapps.carouselview.CarouselView
+
+        android:id="@+id/carouselView"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+       android:layout_below="@id/elecshopping"
+        android:layout_marginTop="12dp"
+        app:fillColor="#302B2B"
+        app:pageColor="#00000000"
+        app:radius="6dp"
+        app:slideInterval="3000"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp"
+        />
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/carouselView"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dell"></ImageView>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:src="@drawable/hp"></ImageView>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:src="@drawable/samsu"></ImageView>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:src="@drawable/sony"></ImageView>
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:src="@drawable/apple"></ImageView>
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#FFFCF8"
+                    android:layout_above="@id/nav_view"
+                    android:layout_below="@id/relativeLayout"
+
+                    />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="#E9DDDD"
+        android:fitsSystemWindows="true"
+        android:textSize="@dimen/design_bottom_navigation_text_size"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

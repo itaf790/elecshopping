@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/backm">
+
+    <ImageView
+        android:id="@+id/logopng"
+        android:layout_width="297dp"
+        android:layout_height="192dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/elecpng"></ImageView>
+
+    <TextView
+        android:id="@+id/slogn"
+        style="@android:style/Widget.Holo.TextView"
+        android:layout_width="323dp"
+        android:layout_height="115dp"
+        android:layout_below="@id/logopng"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-53dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/find_discover_choose_and_buy_anything_online"
+        android:textColor="#EA7D1A"
+        android:textColorLink="#EF7D1A"
+        android:textSize="20dp"
+        android:textStyle="normal|italic" />
+
+
+
+
+    <Button
+        android:id="@+id/goshopping"
+        android:layout_width="300dp"
+        android:layout_height="72dp"
+        android:layout_below="@id/slogn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:gravity="center"
+        android:padding="14dp"
+        android:text="Go Shopping"
+        android:textAllCaps="false"
+        android:textColor="#0C0C0C"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="23dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp" />
+
+    <TextView
+        android:id="@+id/createaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goshopping"
+        android:layout_centerHorizontal="true"
+        android:text="Don't have an account? Sign Up"
+        android:textColor="#352C2C"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
