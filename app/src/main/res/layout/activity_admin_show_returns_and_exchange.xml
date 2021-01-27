@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.UserDeliveryFeeActivity"
+    tools:context=".Admin.AdminShowReturnsAndExchangeActivity"
     android:background="@drawable/backm">
 
     <ImageView
@@ -28,28 +28,62 @@
         android:layout_centerVertical="false"
         android:layout_marginEnd="76dp"
         android:gravity="center|center_horizontal"
-        android:text="Delivery Fee رسوم التوصيل "
+        android:text="Returns and Exchange"
         android:layout_marginTop="40dp"
         android:textAlignment="center"
         android:textColor="#372E2E"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="0dp"></TextView>
 
-
     <TextView
-        android:id="@+id/txtdeliveryfee"
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
+        android:id="@+id/select"
+        android:layout_width="302dp"
+        android:layout_height="36dp"
         android:layout_below="@id/text"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="3dp"
         android:layout_marginTop="20dp"
-        android:text="text "
-        android:textSize="25dp"
+        android:text="User Choose "
+        android:textColor="@color/black"
+        android:textSize="18dp"></TextView>
+    <TextView
+        android:id="@+id/txtreason"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/reason"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="User Reasons "
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:layout_marginStart="3dp"></TextView>
+
+    <TextView
+        android:id="@+id/reason"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/txtchoose"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="User Reason "
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="3dp"></TextView>
+
+    <TextView
+        android:id="@+id/txtchoose"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/select"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
+        android:hint="user select "
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
 
 
 </RelativeLayout>

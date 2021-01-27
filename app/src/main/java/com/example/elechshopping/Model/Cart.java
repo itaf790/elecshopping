@@ -18,17 +18,7 @@ public class Cart {
     private String discount;
     private String image;
 
-    public String getReturns() {
-        return returns;
-    }
-
-    public void setReturns(String returns) {
-        this.returns = returns;
-    }
-
-    private String returns ;
-
-    public Cart(String pid, String pname, String totalAmount, String price, String image, String pquantity, String brand, String date, String time, String delivery_fee, String delivery_time, String payment_method, String numberquantity, String returns) {
+    public Cart(String pid, String pname, String price, String pquantity, String brand, String date, String time, String delivery_fee, String delivery_time, String payment_method, String numberquantity, String totalAmount, String overdiscount, String discount, String image) {
         this.pid = pid;
         this.pname = pname;
         this.price = price;
@@ -36,42 +26,13 @@ public class Cart {
         this.brand = brand;
         this.date = date;
         this.time = time;
-        this.image = image;
         this.delivery_fee = delivery_fee;
         this.delivery_time = delivery_time;
         this.payment_method = payment_method;
         this.numberquantity = numberquantity;
         this.totalAmount = totalAmount;
-        this.returns = returns;
-    }
-
-    public Cart(String overdiscount) {
         this.overdiscount = overdiscount;
-    }
-
-    public String getOverdiscount() {
-        return overdiscount;
-    }
-
-    public void setOverdiscount(String overdiscount) {
-        this.overdiscount = overdiscount;
-    }
-
-    public String getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(String totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public Cart() {
-    }
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
+        this.discount = discount;
         this.image = image;
     }
 
@@ -105,14 +66,6 @@ public class Cart {
 
     public void setPquantity(String pquantity) {
         this.pquantity = pquantity;
-    }
-
-    public String getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(String discount) {
-        this.discount = discount;
     }
 
     public String getBrand() {
@@ -170,4 +123,40 @@ public class Cart {
     public void setNumberquantity(String numberquantity) {
         this.numberquantity = numberquantity;
     }
+
+    public String getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(String totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public String getOverdiscount() {
+        return overdiscount;
+    }
+
+    public void setOverdiscount(String overdiscount) {
+        this.overdiscount = overdiscount;
+    }
+
+    public String getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Cart() {
+    }
+
 }

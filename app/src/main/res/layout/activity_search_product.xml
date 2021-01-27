@@ -22,19 +22,19 @@
             android:layout_gravity="center"
             ></ImageView>
 
-        <EditText
+    <EditText
 
-            android:id="@+id/search_product_name"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:hint="Products Name"
-            android:padding="10dp"
+        android:id="@+id/search_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
 
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:textColorHint="#000000"
-            android:textSize="20dp" />
+        android:hint="Products Name ابحث عن اسم المنتج"
+        android:padding="10dp"
+        android:textColorHint="#000000"
+        android:textSize="15dp" />
 
 
 
@@ -44,7 +44,7 @@
             android:layout_height="44dp"
             android:layout_marginTop="30dp"
             android:background="#F4ECEC"
-         android:layout_toEndOf="@id/search_product_name"
+            android:layout_toEndOf="@id/search_product_name"
             android:src="@drawable/ic_baseline_search_24"
             ></ImageView>
 

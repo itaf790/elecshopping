@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.elechshopping.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +36,10 @@ public class AdminDiscountActivity extends AppCompatActivity {
     private ProgressDialog loadingBar;
     private Button Continue;
 
+    private String productID = "";
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private DatabaseReference mUserDatabase = FirebaseDatabase.getInstance().getReference();
+    FirebaseUser currentUser = mAuth.getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,12 +102,12 @@ public class AdminDiscountActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if (!(snapshot.child("Admin").child(overdiscount).exists())) {
+                if (!(snapshot.child("Cart List").child(overdiscount).exists())) {
                     HashMap<String, Object> userdataMap= new HashMap<>();
                     userdataMap.put("overdiscount",overdiscount);
 
 
-                    RootRef.child("Admin").child("Policies").child("overdiscount").updateChildren(userdataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    RootRef.child("Cart List").child("overdiscount").updateChildren(userdataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
 

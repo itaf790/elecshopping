@@ -59,7 +59,7 @@ public class IndexActivity extends AppCompatActivity {
         listDataChild = new HashMap<String, List<String>>();
 
         // Adding child data
-        listDataHeader.add("Categories");
+
         listDataHeader.add("Payment Method");
         listDataHeader.add("Delivery Fee");
         listDataHeader.add("Delivery Time");
@@ -69,16 +69,6 @@ public class IndexActivity extends AppCompatActivity {
         listDataHeader.add("LogOut");
 
 
-        // Adding child data
-        final List<String> Categories = new ArrayList<String>();
-        Categories.add("Computers");
-        Categories.add("Laptops");
-        Categories.add("Headphones");
-        Categories.add("Cameras");
-        Categories.add("TVs");
-        Categories.add("Mobiles");
-        Categories.add("Tablets");
-        Categories.add("Other Electronics");
 
         final List<String> Payment = new ArrayList<String>();
         Payment.add("click here to Read the payment method");
@@ -105,14 +95,14 @@ public class IndexActivity extends AppCompatActivity {
 
 
 
-        listDataChild.put(listDataHeader.get(0), Categories);// Header, Child data
-        listDataChild.put(listDataHeader.get(1), Payment);
-        listDataChild.put(listDataHeader.get(2), fee);
-        listDataChild.put(listDataHeader.get(3), time);
-        listDataChild.put(listDataHeader.get(4), returns);
-        listDataChild.put(listDataHeader.get(5), exchange);
-        listDataChild.put(listDataHeader.get(6), exre);
-        listDataChild.put(listDataHeader.get(7), logout);
+
+        listDataChild.put(listDataHeader.get(0), Payment);
+        listDataChild.put(listDataHeader.get(1), fee);
+        listDataChild.put(listDataHeader.get(2), time);
+        listDataChild.put(listDataHeader.get(3), returns);
+        listDataChild.put(listDataHeader.get(4), exchange);
+        listDataChild.put(listDataHeader.get(5), exre);
+        listDataChild.put(listDataHeader.get(6), logout);
 
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 

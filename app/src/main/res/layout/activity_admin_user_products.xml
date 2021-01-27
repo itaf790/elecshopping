@@ -23,18 +23,17 @@
     <TextView
         android:id="@+id/order"
         android:layout_width="225dp"
-        android:layout_height="41dp"
+        android:layout_height="53dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="78dp"
         android:layout_marginBottom="2dp"
         android:gravity="center|center_horizontal"
-        android:text="Order Products"
+        android:text="Order Products الطلبات  "
         android:textAlignment="center"
         android:textColor="#372E2E"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        ></TextView>
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/products_list"

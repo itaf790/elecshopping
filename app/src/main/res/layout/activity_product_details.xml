@@ -10,23 +10,23 @@
 
     <ImageView
         android:id="@+id/close"
-        android:layout_width="40dp"
+        android:layout_width="30dp"
         android:layout_height="44dp"
-        android:src="@drawable/back"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="40dp"
         android:layout_gravity="center"
-        ></ImageView>
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/back"></ImageView>
+
     <TextView
         android:id="@+id/textdetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
-        android:text="Product Details"
+        android:layout_marginTop="37dp"
+        android:text="Product Details تفاصيل المنتج"
         android:textColor="#000000"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <ScrollView
@@ -69,9 +69,9 @@
                         android:id="@+id/txtpaymentmethod"
                         android:layout_width="3dp"
                         android:layout_weight="1"
-                        android:gravity="center"
+
                         android:padding="15dip"
-                        android:text="Payment method"
+                        android:text="Payment method طريقة الدفع "
                         android:textColor="@color/black" />
 
                     <TextView
@@ -97,7 +97,7 @@
                         android:padding="15dip"
                         android:id="@+id/txtdeliveryfee"
                         android:textColor="@color/black"
-                        android:text="Delivery fee" />
+                        android:text="Delivery fee رسوم التوصيل" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -123,7 +123,7 @@
 
                         android:gravity="center"
                         android:padding="15dip"
-                        android:text="Delivery time" />
+                        android:text="Delivery time وقت التوصيل" />
 
                     <TextView
                         android:id="@+id/delivery_time_details"
@@ -148,7 +148,7 @@
 
                         android:gravity="center"
                         android:padding="15dip"
-                        android:text="Product name" />
+                        android:text="Product name اسم المنتج" />
 
                     <TextView
                         android:id="@+id/product_name_details"
@@ -172,7 +172,7 @@
 
                         android:gravity="center"
                         android:padding="15dip"
-                        android:text="product price"
+                        android:text="product price سعر المنتج"
                         android:id="@+id/txtproductprice"
                         android:textColor="@color/black"/>
 
@@ -197,7 +197,7 @@
 
                         android:gravity="center"
                         android:padding="15dip"
-                        android:text="Product brand"
+                        android:text="Product brand العلامة التجارية"
                         android:id="@+id/txtproductbrand"
                         android:textColor="@color/black"/>
 
@@ -223,7 +223,7 @@
 
                         android:gravity="center"
                         android:padding="15dip"
-                        android:text="Description"
+                        android:text="Description وصف المنتج"
                         android:id="@+id/txtdescription"
                         android:textColor="@color/black"/>
 
@@ -249,7 +249,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                        android:text="Discount"
+                        android:text="Discount خصم"
                         android:id="@+id/txtdiscount"
                         android:textColor="@color/black"/>
 
@@ -287,7 +287,7 @@
                 android:textColor="@color/black"
                 android:shadowColor="@color/black"
                 android:layout_gravity="center"
-                android:text="Select a number of products..."
+                android:text="Select a number of products| اختر الكمية المطلوبة "
                 android:visibility="visible"
                 />
             <NumberPicker
@@ -309,9 +309,9 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:layout_margin="15dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/buttons"
-                android:text="Add to Cart"
+                android:text="Add to Cart | اضف الى سلة الشراء "
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />
         </LinearLayout>

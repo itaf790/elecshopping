@@ -12,23 +12,23 @@
         android:layout_width="40dp"
         android:layout_height="44dp"
         android:layout_gravity="center"
-        android:layout_marginTop="155dp"
         android:layout_marginLeft="60dp"
+        android:layout_marginTop="155dp"
         android:src="@drawable/back"></ImageView>
 
     <TextView
         android:id="@+id/textlog"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="148dp"
+
         android:foregroundGravity="center_vertical|center|center_horizontal"
         android:gravity="center|center_horizontal|center_vertical"
-        android:text="Log In"
+        android:text="Log In  تسجيل الدخول "
         android:textColor="#000000"
-        android:textSize="38dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
@@ -40,7 +40,7 @@
         android:layout_below="@+id/textlog"
         android:background="@drawable/inputs"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="E-mail | الايميل"
         android:inputType="textEmailAddress"
         android:padding="20dp"
         android:shadowColor="#8C7070"
@@ -57,7 +57,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/inputs"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Password | كلمة السر "
         android:inputType="textPassword"
         android:padding="20dp"
         android:shadowColor="#8C7070"
@@ -76,7 +76,7 @@
         android:background="@drawable/buttons"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Log In"
+        android:text="Log In | تسجيل الدخول "
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -125,7 +125,7 @@
 
         android:layout_marginLeft="50dp"
         android:layout_marginTop="16dp"
-        android:text="Forget Password?"
+        android:text="Forget Password? | نسيت كلمة السر "
         android:textColor="#000000"
         android:textSize="17dp"
         android:textStyle="bold" />

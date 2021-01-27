@@ -24,17 +24,18 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="256dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="59dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
-        android:layout_marginEnd="76dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="76dp"
         android:gravity="center|center_horizontal"
-        android:text="Return and Exhcange"
+        android:text="Return and Exhcange
+التبديل والارجاع"
         android:textAlignment="center"
         android:textColor="#372E2E"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
@@ -62,7 +63,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                android:layout_gravity="center"
-                android:text="Do you want to Returns or Exchange this product? "
+                android:text="Do you want to Returns or Exchange this product?  |  هل تريد إرجاع أو استبدال هذا المنتج؟"
                 android:textColor="@color/black"
                 android:textSize="17dp"></TextView>
 
@@ -98,7 +99,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:hint="Returns or Exchange"
+                android:hint="Returns or Exchange | تبديل او ارجاع "
                 android:textColor="@color/black"></EditText>
 
             <TextView
@@ -109,7 +110,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
                 android:layout_gravity="center"
-                android:text="Please write down the reason  "
+                android:text="Please write down the reason | الرجاء كتابة السبب "
                 android:textColor="@color/black"
                 android:textSize="17dp"></TextView>
 
@@ -121,7 +122,7 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:hint="Reason!"
+                android:hint="Reason! | السبب "
                 android:textColor="@color/black"></EditText>
             <Button
                 android:id="@+id/next"

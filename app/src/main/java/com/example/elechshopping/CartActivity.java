@@ -43,7 +43,7 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private Button nextProcessBtn;
     private TextView txtMsg1 ,txtTotalAmount, cart_discount  ;
-    private double overTotalAmount = 0 ,overTotalAmount1 = 0,  overtotal=0 ,total_after_discount= 0, Total=0, discount= 0 , totalprice=0 ;
+    private double overTotalAmount = 0 ,overTotalAmount1 = 0,  overtotal=0 ,total_after_discount= 0, Total=0, totalAmount_after_discount= 0 , totalprice=0 , overdiscount=0;
     private ImageView closeTextBtn;
     private ProgressDialog loadingBar;
     private String OverTotalAmount = "";
@@ -139,31 +139,35 @@ public class CartActivity extends AppCompatActivity {
                             double oneTypeTotalShipped = (Integer.valueOf(model.getDelivery_fee())) ;
 
 
-                            if (model.getDiscount().equals("") ){
-                                cartViewHolder.txtProductDiscount.setText("Discount = % 0");
-                                overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
-                                cartViewHolder.txtProducttotalprice.setText("Total Price =  $" + oneTypeTotalPrice);
-                                cartViewHolder.txttotalamount.setText("Total Amount = $ " + overtotal);
-                                 overTotalAmount1 =overTotalAmount1+ overtotal;
-                                //Toast.makeText(CartActivity.this, ""+overTotalAmount1, Toast.LENGTH_SHORT).show();
 
-                            }
+                                if (model.getDiscount().equals("")) {
+                                    cartViewHolder.txtProductDiscount.setText("Discount = % 0");
+                                    overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
+                                    cartViewHolder.txtProducttotalprice.setText("Total Price =  $" + oneTypeTotalPrice);
+                                    cartViewHolder.txttotalamount.setText("Total Amount = $ " + overtotal);
+                                    overTotalAmount1 = overTotalAmount1 + overtotal;
+                                   // Toast.makeText(CartActivity.this, ""+overTotalAmount1, Toast.LENGTH_SHORT).show();
 
-                            else {
+                                } else {
 
 
-                                double discount = (Double.valueOf(model.getDiscount())) / 100;
-                                overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
-                                total_after_discount = overtotal * discount;
-                                totalprice = overtotal - total_after_discount;
+                                    double discount = (Double.valueOf(model.getDiscount())) / 100;
+                                    overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
+                                    total_after_discount = overtotal * discount;
+                                    totalprice = overtotal - total_after_discount;
 
-                                cartViewHolder.txtProducttotalprice.setText("Total Price =  $" + oneTypeTotalPrice);
-                                cartViewHolder.txttotalamount.setText("Total Amount = $ " + totalprice);
-                            }
-                            overTotalAmount = overTotalAmount1+  totalprice;
-                            Toast.makeText(CartActivity.this, ""+overTotalAmount, Toast.LENGTH_SHORT).show();
-                            txtTotalAmount.setText("Total Price = $" + overTotalAmount);
-                            productID=getIntent().getStringExtra("pid");
+                                    cartViewHolder.txtProducttotalprice.setText("Total Price =  $" + oneTypeTotalPrice);
+                                    cartViewHolder.txttotalamount.setText("Total Amount = $ " + totalprice);
+                                }
+                                overTotalAmount = overTotalAmount1 + totalprice;
+                              //  Toast.makeText(CartActivity.this, "" + overTotalAmount, Toast.LENGTH_SHORT).show();
+                                txtTotalAmount.setText("Total Price = $" + overTotalAmount);
+                                productID = getIntent().getStringExtra("pid");
+
+
+
+
+
 
 
 ////////////////////////////////////// this to put totalamount in firebase under cartlist

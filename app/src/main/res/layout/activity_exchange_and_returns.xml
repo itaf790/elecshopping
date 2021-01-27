@@ -25,17 +25,19 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="256dp"
-        android:layout_height="50dp"
+        android:layout_width="271dp"
+        android:layout_height="52dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
-        android:layout_marginEnd="76dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="76dp"
         android:gravity="center|center_horizontal"
-        android:text="Return and Exhcange"
+        android:text="Return and Exhcange
+
+التبديل والارجاع "
         android:textAlignment="center"
         android:textColor="#372E2E"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
@@ -50,7 +52,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Usually, the exchange and return process for orders takes 1-2 days"
+        android:text="Usually, the exchange and return process for orders takes 1-2 days | عادةً ما تستغرق عملية الاستبدال والإرجاع للطلبات من يوم إلى يومين"
         android:textColor="@color/black"
         android:textSize="17dp"
         ></TextView>
@@ -63,7 +65,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Choose Which Products you want to Exchange or Returns"
+        android:text="Choose Which Products you want to Exchange or Returns | اختر المنتجات التي تريد استبدالها أو إرجاعها"
         android:textColor="@color/black"
         android:textSize="14dp"
         ></TextView>

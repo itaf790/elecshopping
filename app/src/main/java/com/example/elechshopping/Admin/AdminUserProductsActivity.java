@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.elechshopping.CartActivity;
 import com.example.elechshopping.Model.Cart;
 import com.example.elechshopping.R;
 import com.example.elechshopping.ViewHolder.CartViewHolder;
@@ -35,7 +36,8 @@ public class AdminUserProductsActivity extends AppCompatActivity {
     private TextView txtTotalAmount  ;
     private DatabaseReference cartListRef;
     private ImageView closeTextBtn;
-    private double overTotalAmount = 0 , overtotal=0 ,total_after_discount= 0, Total=0, discount= 0 , totalprice=0 ;
+    private double overTotalAmount = 0 ,overTotalAmount1 = 0,  overtotal=0 ,total_after_discount= 0, Total=0, totalAmount_after_discount= 0 , totalprice=0 , overdiscount=0;
+
 
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -99,18 +101,38 @@ public class AdminUserProductsActivity extends AppCompatActivity {
                 double oneTypeTotalPrice = (Integer.valueOf(model.getPrice())) * Integer.valueOf(model.getNumberquantity());
                 double oneTypeTotalShipped = (Integer.valueOf(model.getDelivery_fee())) ;
 
-                double discount =(Double.valueOf(model.getDiscount()))/100;
-                overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
 
-                total_after_discount= overtotal*discount;
 
-                totalprice= overtotal-total_after_discount;
 
-                overTotalAmount = overTotalAmount + totalprice;
+                if (model.getDiscount().equals("")) {
+                    cartViewHolder.txtProductDiscount.setText("Discount = % 0");
+                    overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
+                    cartViewHolder.txtProducttotalprice.setText("Total Price =  $" + oneTypeTotalPrice);
+                    cartViewHolder.txttotalamount.setText("Total Amount = $ " + overtotal);
+                    overTotalAmount1 = overTotalAmount1 + overtotal;
+                    // Toast.makeText(CartActivity.this, ""+overTotalAmount1, Toast.LENGTH_SHORT).show();
 
-                cartViewHolder.txtProducttotalprice.setText("Total Price =  $"+ oneTypeTotalPrice);
-                cartViewHolder.txttotalamount.setText("Total Amount = $ "+ totalprice);
+                } else {
+
+
+                    double discount = (Double.valueOf(model.getDiscount())) / 100;
+                    overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
+                    total_after_discount = overtotal * discount;
+                    totalprice = overtotal - total_after_discount;
+
+                    cartViewHolder.txtProducttotalprice.setText("Total Price =  $" + oneTypeTotalPrice);
+                    cartViewHolder.txttotalamount.setText("Total Amount = $ " + totalprice);
+                }
+                overTotalAmount = overTotalAmount1 + totalprice;
+                Toast.makeText(AdminUserProductsActivity.this, "" + overTotalAmount, Toast.LENGTH_SHORT).show();
                 txtTotalAmount.setText("Total Price = $" + overTotalAmount);
+
+
+
+
+
+
+
 
                 final DatabaseReference cartListRef= FirebaseDatabase.getInstance().getReference().child("Cart List");
 

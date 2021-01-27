@@ -90,6 +90,16 @@ public class ExchangeAndReturnsActivity extends AppCompatActivity {
             }
         });
 
+
+        if (currentUser.getUid()==null){
+
+            Toast.makeText(this, "you must login", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(ExchangeAndReturnsActivity.this, HomeActivity.class);
+            Toast.makeText(this, "you must login", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+
+        }
+        else
         progressDialog = new ProgressDialog(ExchangeAndReturnsActivity.this);
 
 

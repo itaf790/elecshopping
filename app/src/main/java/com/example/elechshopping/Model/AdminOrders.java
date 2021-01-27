@@ -1,9 +1,17 @@
 package com.example.elechshopping.Model;
 
 public class AdminOrders {
-    private String name, phone, address, city, state, date , time, totalAmount , reason, exchangeorreturns , email;
+    private String name, phone, address, city, state, date , time, totalAmount , reason,select, exchangeorreturns , email;
 
     public AdminOrders() {
+    }
+
+    public String getSelect() {
+        return select;
+    }
+
+    public void setSelect(String select) {
+        this.select = select;
     }
 
     public AdminOrders(String email) {
@@ -28,6 +36,7 @@ public class AdminOrders {
         this.time = time;
         this.totalAmount = totalAmount;
         this.reason = reason;
+        this.select = select;
         this.exchangeorreturns = exchangeorreturns;
     }
 

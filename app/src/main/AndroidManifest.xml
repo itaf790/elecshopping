@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Admin.AdminExchangeorReturnsActivity"></activity>
+        <activity android:name=".Admin.AdminShowReturnsAndExchangeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".Admin.AdminExchangeorReturnsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".ChooseItemActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

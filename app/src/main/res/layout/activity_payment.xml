@@ -8,42 +8,41 @@
     android:background="@drawable/backm">
 
 
-
     <ImageView
         android:id="@+id/close"
-        android:layout_width="40dp"
+        android:layout_width="30dp"
         android:layout_height="44dp"
-        android:src="@drawable/back"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="40dp"
         android:layout_gravity="center"
-        ></ImageView>
-    <TextView
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
-        android:gravity="center|center_horizontal"
-        android:text="Payment Method"
+        android:src="@drawable/back"></ImageView>
+
+    <TextView
         android:id="@+id/text"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="center|center_horizontal"
+        android:text="Payment Method طريقة الدفع "
         android:textAlignment="center"
         android:textColor="#372E2E"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"></TextView>
-
-
-
 
     <TextView
         android:id="@+id/txtmethod"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/text"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+
         android:gravity="center"
-        android:textSize="25dp"
-        android:text="Choose your payment method"
-        android:textColor="#272625" />
+        android:text="Choose your payment method  اختيار طريقة الدفع "
+        android:textColor="#272625"
+        android:textSize="20dp" />
 
     <CheckBox
         android:id="@+id/credit_card"
@@ -71,8 +70,8 @@
         android:textColor="#191818"
         android:textColorHint="#191818"
         android:buttonTint="@color/colorPrimary"
-        android:text="Payment when Orders Recived "
-        android:textSize="18dp"
+        android:text="Payment when Orders Recived | الدفع عن التوصيل  "
+        android:textSize="15dp"
         android:onClick="onClick"
         tools:ignore="OnClick" />
 

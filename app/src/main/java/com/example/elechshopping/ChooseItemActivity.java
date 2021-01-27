@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.elechshopping.Admin.AdminDelivaryTimeActivity;
+import com.example.elechshopping.Admin.AdminExchangeActivity;
 import com.example.elechshopping.Admin.AdminHomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -56,7 +57,6 @@ public class ChooseItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_item);
-
         closeTextBtn = (ImageView) findViewById(R.id.close);
         closeTextBtn.setOnClickListener(new View.OnClickListener()
         {
@@ -67,11 +67,9 @@ public class ChooseItemActivity extends AppCompatActivity {
             }
         });
 
-
-
-        next=(Button)findViewById(R.id.next);
+       next=(Button)findViewById(R.id.next);
+        select=(EditText) findViewById(R.id.edchoose);
         reson=(EditText) findViewById(R.id.writereason);
-        //select=(EditText) findViewById(R.id.edchoose);
 
 
 
@@ -81,7 +79,7 @@ public class ChooseItemActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Addingreason();
+                AddingExchange();
             }
         });
 
@@ -89,82 +87,53 @@ public class ChooseItemActivity extends AppCompatActivity {
 
 
 
-    private void Addingreason() {
-        String reason= reson.getText().toString() ;
+    private void AddingExchange() {
         String choose= select.getText().toString() ;
+        String reason= reson.getText().toString() ;
 
-        if (TextUtils.isEmpty(reason)){
-            Toast.makeText(this, "Please Choose one", Toast.LENGTH_SHORT).show();
-        }
+
         if (TextUtils.isEmpty(choose)){
+            Toast.makeText(this, "Please choose one", Toast.LENGTH_SHORT).show();
+        }
+        if (TextUtils.isEmpty(reason)){
             Toast.makeText(this, "Please write your reason", Toast.LENGTH_SHORT).show();
         }
 
         else{
 
-            loadingBar.setTitle("Adding Reason");
+            loadingBar.setTitle("Adding Exchange and Returns");
             loadingBar.setMessage("please wait");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
-            addreason(reason);
-        }
+            final DatabaseReference cartListRef= FirebaseDatabase.getInstance().getReference().child("Exchange and Returns");
 
-    }
+            final HashMap<String,Object> cartMap = new HashMap<>();
 
-    private void addreason(final String reason) {
-        final DatabaseReference RootRef;
-        RootRef= FirebaseDatabase.getInstance().getReference();
-        RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
-
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                if (!(snapshot.child("Admin").child(reason).exists())) {
-                    HashMap<String, Object> userdataMap= new HashMap<>();
-                    userdataMap.put("reason",reason);
-                   // userdataMap.put("select",select);
-
-
-                    RootRef.child("Admin").child("Exchange or Returns").updateChildren(userdataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            cartMap.put("select", choose);
+            cartMap.put("reason", reason);
+            cartListRef.updateChildren(cartMap)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
 
-                            if (task.isSuccessful()){
-                                Toast.makeText(ChooseItemActivity.this, "Thank you", Toast.LENGTH_SHORT).show();
-                                loadingBar.dismiss();
+                                                    Toast.makeText(ChooseItemActivity.this, "you choose  "+ choose, Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(ChooseItemActivity.this, HomeActivity.class);
+                                                    startActivity(intent);
 
-                                Intent intent = new Intent(ChooseItemActivity.this, HomeActivity.class);
-                                startActivity(intent);
-                            }
+                                                }
+                                            }
+                                        });
 
-                            else {
-                                loadingBar.dismiss();
-                                Toast.makeText(ChooseItemActivity.this, "Network Error: Please try again  ", Toast.LENGTH_SHORT).show();
 
-                            }
 
 
                         }
-                    });
-
-                } else {
-                    Toast.makeText(ChooseItemActivity.this, "This already exists", Toast.LENGTH_SHORT).show();
-                    loadingBar.dismiss();
-                    Toast.makeText(ChooseItemActivity.this, "Please try again", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(ChooseItemActivity.this, AdminHomeActivity.class);
-                    startActivity(intent);
-                }
+                    };
+        }
 
 
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
 
-    }
-}
+
