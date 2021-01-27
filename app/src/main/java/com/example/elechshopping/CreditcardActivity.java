@@ -1,6 +1,7 @@
 package com.example.elechshopping;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -30,6 +31,7 @@ public class CreditcardActivity extends AppCompatActivity {
         closeTextBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                startActivity(new Intent(CreditcardActivity.this, PaymentActivity.class));
                 finish();}
         });
 
@@ -84,7 +86,10 @@ public class CreditcardActivity extends AppCompatActivity {
 
 
 
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, PaymentActivity.class));
+    }
 
 
 

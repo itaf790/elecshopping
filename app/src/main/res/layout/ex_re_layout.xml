@@ -20,13 +20,14 @@
             android:id="@+id/cart_product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="6dp"
+            android:layout_marginStart="10dp"
             android:text="Product Name"
+            android:layout_marginTop="15dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textColor="#494545"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/cart_product_price"
@@ -37,9 +38,10 @@
             android:text="Product Price"
             android:layout_marginTop="5dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textColor="#494545"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/cart_product_brand"
@@ -50,9 +52,10 @@
             android:gravity="center_horizontal"
             android:text="Product Brand"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textColor="#494545"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/cart_product_date"
@@ -63,9 +66,10 @@
             android:gravity="center_horizontal"
             android:text="Product Date"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textColor="#494545"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
         <TextView
             android:id="@+id/cart_product_quantity"
             android:layout_width="match_parent"
@@ -75,10 +79,11 @@
             android:gravity="center_horizontal"
             android:text="Product Quantity"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textColor="#494545"
+            android:textSize="15dp"
             android:textStyle="bold"
-           android:layout_marginBottom="10dp"/>
+           android:layout_marginBottom="10dp"
+            />
 
 
     </RelativeLayout>

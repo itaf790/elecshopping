@@ -43,7 +43,7 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private Button nextProcessBtn;
     private TextView txtMsg1 ,txtTotalAmount, cart_discount  ;
-    private double overTotalAmount = 0 , overtotal=0 ,total_after_discount= 0, Total=0, discount= 0 , totalprice=0 ;
+    private double overTotalAmount = 0 ,overTotalAmount1 = 0,  overtotal=0 ,total_after_discount= 0, Total=0, discount= 0 , totalprice=0 ;
     private ImageView closeTextBtn;
     private ProgressDialog loadingBar;
     private String OverTotalAmount = "";
@@ -138,19 +138,31 @@ public class CartActivity extends AppCompatActivity {
                             double oneTypeTotalPrice = (Integer.valueOf(model.getPrice())) * Integer.valueOf(model.getNumberquantity());
                             double oneTypeTotalShipped = (Integer.valueOf(model.getDelivery_fee())) ;
 
-                           double discount =(Double.valueOf(model.getDiscount()))/100;
-                            overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
 
-                            total_after_discount= overtotal*discount;
+                            if (model.getDiscount().equals("") ){
+                                cartViewHolder.txtProductDiscount.setText("Discount = % 0");
+                                overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
+                                cartViewHolder.txtProducttotalprice.setText("Total Price =  $" + oneTypeTotalPrice);
+                                cartViewHolder.txttotalamount.setText("Total Amount = $ " + overtotal);
+                                 overTotalAmount1 =overTotalAmount1+ overtotal;
+                                //Toast.makeText(CartActivity.this, ""+overTotalAmount1, Toast.LENGTH_SHORT).show();
 
-                            totalprice= overtotal-total_after_discount;
+                            }
 
-                            overTotalAmount = overTotalAmount + totalprice;
+                            else {
 
-                            cartViewHolder.txtProducttotalprice.setText("Total Price =  $"+ oneTypeTotalPrice);
-                            cartViewHolder.txttotalamount.setText("Total Amount = $ "+ totalprice);
+
+                                double discount = (Double.valueOf(model.getDiscount())) / 100;
+                                overtotal = oneTypeTotalPrice + oneTypeTotalShipped;
+                                total_after_discount = overtotal * discount;
+                                totalprice = overtotal - total_after_discount;
+
+                                cartViewHolder.txtProducttotalprice.setText("Total Price =  $" + oneTypeTotalPrice);
+                                cartViewHolder.txttotalamount.setText("Total Amount = $ " + totalprice);
+                            }
+                            overTotalAmount = overTotalAmount1+  totalprice;
+                            Toast.makeText(CartActivity.this, ""+overTotalAmount, Toast.LENGTH_SHORT).show();
                             txtTotalAmount.setText("Total Price = $" + overTotalAmount);
-
                             productID=getIntent().getStringExtra("pid");
 
 
@@ -172,7 +184,7 @@ public class CartActivity extends AppCompatActivity {
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()) {
 
-                                                                    Toast.makeText(CartActivity.this, "Total Price = $ "+ overTotalAmount, Toast.LENGTH_SHORT).show();
+                                                                   Toast.makeText(CartActivity.this, "Total Price = $ "+ overTotalAmount, Toast.LENGTH_SHORT).show();
                                                                 }
                                                             }
                                                         });

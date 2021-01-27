@@ -39,24 +39,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="0dp"></TextView>
-    <TextView
-        android:id="@+id/txtre"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="Usually, the exchange and return process for orders takes 1-2 days"
-        android:textColor="@color/black"
-        android:textSize="17dp"></TextView>
+
 
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/txtre"
+        android:layout_below="@id/text"
         >
 
         <LinearLayout
@@ -64,32 +54,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-
-
-
-
-
-
             <TextView
-                android:id="@+id/textnumb"
-                android:layout_width="wrap_content"
+                android:id="@+id/choose"
+                android:layout_width="344dp"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:layout_below="@id/text"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
+               android:layout_gravity="center"
+                android:text="Do you want to Returns or Exchange this product? "
                 android:textColor="@color/black"
-                android:shadowColor="@color/black"
-                android:layout_gravity="center"
-                android:text="Select One ..."
-                android:visibility="visible"
-                />
-            <NumberPicker
-                android:id="@+id/np"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv"
-                android:visibility="visible"
-                />
+                android:textSize="17dp"></TextView>
+
+
 
 
 
@@ -112,15 +89,39 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints" />
 
+
+            <EditText
+                android:id="@+id/edchoose"
+                android:layout_width="358dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/np"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:hint="Returns or Exchange"
+                android:textColor="@color/black"></EditText>
+
+            <TextView
+                android:id="@+id/reason"
+                android:layout_width="344dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center"
+                android:text="Please write down the reason  "
+                android:textColor="@color/black"
+                android:textSize="17dp"></TextView>
+
             <EditText
                 android:id="@+id/writereason"
                 android:layout_width="358dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/np"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:text="Write down the reason"
+                android:hint="Reason!"
                 android:textColor="@color/black"></EditText>
             <Button
                 android:id="@+id/next"

@@ -69,6 +69,7 @@ public class RecivedActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                startActivity(new Intent(RecivedActivity.this, PaymentActivity.class));
                 finish();
             }
         });
@@ -145,10 +146,8 @@ public class RecivedActivity extends AppCompatActivity {
 
                 if (task.isSuccessful())
                 {
-                    FirebaseDatabase.getInstance().getReference("Cart List")
-                            .child("User View")
-                            .child(currentUser.getUid())
-                            .removeValue()
+                    FirebaseDatabase.getInstance().getReference("Orders")
+                            .child(currentUser.getUid()).updateChildren(ordersMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -166,9 +165,9 @@ public class RecivedActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, PaymentActivity.class));
     }
 }

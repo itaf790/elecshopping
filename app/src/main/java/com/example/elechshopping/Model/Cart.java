@@ -2,9 +2,33 @@ package com.example.elechshopping.Model;
 
 public class Cart {
 
-    private String pid,pname,price,pquantity, brand , date , time , delivery_fee , delivery_time , payment_method , numberquantity , totalAmount , overdiscount ,discount, image ;
+    private String pid;
+    private String pname;
+    private String price;
+    private String pquantity;
+    private String brand;
+    private String date;
+    private String time;
+    private String delivery_fee;
+    private String delivery_time;
+    private String payment_method;
+    private String numberquantity;
+    private String totalAmount;
+    private String overdiscount;
+    private String discount;
+    private String image;
 
-    public Cart(String pid, String pname,String totalAmount, String price,String image, String pquantity,  String brand, String date, String time, String delivery_fee, String delivery_time, String payment_method, String numberquantity) {
+    public String getReturns() {
+        return returns;
+    }
+
+    public void setReturns(String returns) {
+        this.returns = returns;
+    }
+
+    private String returns ;
+
+    public Cart(String pid, String pname, String totalAmount, String price, String image, String pquantity, String brand, String date, String time, String delivery_fee, String delivery_time, String payment_method, String numberquantity, String returns) {
         this.pid = pid;
         this.pname = pname;
         this.price = price;
@@ -18,6 +42,7 @@ public class Cart {
         this.payment_method = payment_method;
         this.numberquantity = numberquantity;
         this.totalAmount = totalAmount;
+        this.returns = returns;
     }
 
     public Cart(String overdiscount) {

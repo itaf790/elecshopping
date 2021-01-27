@@ -136,9 +136,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         if(pQuantity.equals("")){
             Toast.makeText(this,"Enter Product quantity ",Toast.LENGTH_LONG).show();
         }
-        if(pDiscount.equals("")){
-            Toast.makeText(this,"Enter Product discount ",Toast.LENGTH_LONG).show();
-        }
+
 
         else {
             final HashMap<String,Object> prodMap=new HashMap<>();
