@@ -132,7 +132,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             cartMap.put("delivery_time", productDeliverytime.getText().toString());
             cartMap.put("delivery_fee", productDeliveryfee.getText().toString());
             cartMap.put("brand", productBrand.getText().toString());
-            // cartMap.put("pquantity",productQuantity.getText().toString());
+            cartMap.put("pquantity",productQuantity.getText().toString());
             cartMap.put("date", saveCurrentDate);
             cartMap.put("time", saveCurrentTime);
             cartMap.put("numberquantity", numberquantity.getText().toString());
@@ -201,7 +201,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     Picasso.get().load(products.getImage()).into(productImage);
 
 
+
+
                     final int quantity= (Integer.valueOf(products.getPquantity()));
+
+
                     //Populate NumberPicker values from minimum and maximum value range
                     //Set the minimum value of NumberPicker
                     np.setMinValue(1);
@@ -219,6 +223,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
                             String newvalue = String.valueOf(newVal);
                             numberquantity.setText(newvalue);
+
+                           int newquantity = quantity- newVal;
+                           productQuantity.setText(newquantity);
+
 
                                 if (currentUser != null){
 

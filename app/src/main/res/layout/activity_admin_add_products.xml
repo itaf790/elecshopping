@@ -80,20 +80,21 @@
 
                     <TextView
                         android:id="@+id/txtpaymentmethod"
-                        android:layout_width="0dp"
+                        android:layout_width="193dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                        android:textColor="@color/black"
-                        android:text="Payment method" />
+                        android:text="Payment method"
+                        android:textColor="@color/black" />
 
-                    <EditText
-                        android:id="@+id/adminpaymentmethod"
-                        android:layout_width="0dp"
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="201dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:padding="15dip"
-                        />
+                        android:padding="10dip" />
                 </TableRow>
 
                 <TableRow
@@ -105,7 +106,6 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-
                         android:gravity="center"
                         android:padding="15dip"
                         android:id="@+id/txtdeliveryfee"
@@ -116,6 +116,7 @@
                         android:layout_width="0dp"
                         android:id="@+id/admindeliveryfee"
                         android:layout_weight="1"
+                       android:inputType="number"
                         android:gravity="center"
                         android:padding="15dip"
                         />
@@ -141,7 +142,7 @@
                         android:id="@+id/admindeliverytime"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-
+                        android:hint="5 days"
                         android:gravity="center"
                         android:padding="15dip"
                         android:text=""
@@ -180,7 +181,6 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
-
                         android:gravity="center"
                         android:padding="15dip"
                         android:text="product price"
@@ -192,6 +192,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:inputType="number"
                         android:padding="15dip"
                         />
                 </TableRow>
@@ -215,7 +216,7 @@
                     android:id="@+id/adminproduct_qnt"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-
+                    android:inputType="number"
                     android:gravity="center"
                     android:padding="15dip"
                      />
@@ -229,23 +230,50 @@
                     >
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:id="@+id/txtproductbrand"
+                        android:layout_width="174dp"
                         android:layout_weight="1"
-
                         android:gravity="center"
                         android:padding="15dip"
                         android:text="Product brand"
-                        android:id="@+id/txtproductbrand"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black" />
 
-                    <EditText
-                        android:id="@+id/adminproduct_brand"
-                        android:layout_width="0dp"
+
+                    <Spinner
+                        android:id="@+id/spinnerbrand"
+                        android:layout_width="201dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dip" />
 
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/inputs"
+                    >
+
+                    <TextView
+                        android:id="@+id/txtproductcategory"
+                        android:layout_width="174dp"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                       />
+                        android:text="Product category"
+                        android:textColor="@color/black" />
+
+
+                    <Spinner
+                        android:id="@+id/spinnercategory"
+                        android:layout_width="201dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dip" />
+
                 </TableRow>
 
                 <TableRow
@@ -268,7 +296,6 @@
                         android:id="@+id/adminproduct_description"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-
                         android:gravity="center"
                         android:padding="15dip"
                          />
@@ -295,6 +322,7 @@
                         android:id="@+id/adminproduct_discount"
                         android:layout_width="0dp"
                         android:layout_weight="1"
+                        android:hint="3"
                         android:gravity="center"
                         android:padding="15dip"
                         />

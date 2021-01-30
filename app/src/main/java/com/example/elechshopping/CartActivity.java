@@ -189,6 +189,8 @@ public class CartActivity extends AppCompatActivity {
                                                                 if (task.isSuccessful()) {
 
                                                                    Toast.makeText(CartActivity.this, "Total Price = $ "+ overTotalAmount, Toast.LENGTH_SHORT).show();
+
+
                                                                 }
                                                             }
                                                         });

@@ -92,6 +92,18 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         progressDialog = new ProgressDialog(HomeActivity.this);
 
 
+        TextView computer=(TextView)findViewById(R.id.computer);
+        computer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(HomeActivity.this, AdapterViewActivity.class);
+                startActivity(myIntent);
+
+
+            }
+        });
+
+
         person = (ImageView) findViewById(R.id.person);
         language = (ImageView) findViewById(R.id.language);
         mAuth = FirebaseAuth.getInstance();

@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.elechshopping.Model.Cart;
 import com.example.elechshopping.Model.Products;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -37,7 +40,7 @@ public class RecivedActivity extends AppCompatActivity {
     private ImageView closeTextBtn;
     private TextView txttotalprice;
     private String totalAmount = "";
-
+    private String productID = "";
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     final String uid = currentUser.getUid();
 
@@ -47,7 +50,7 @@ public class RecivedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recived);
 
 
-
+        productID = getIntent().getStringExtra("pid");
 
         confirmOrderBtn = (Button) findViewById(R.id.confirm_final_order);
         nameEditText = (EditText) findViewById(R.id.shipment_name);
@@ -127,7 +130,6 @@ public class RecivedActivity extends AppCompatActivity {
         saveCurrentTime = currentTime.format(calForDate.getTime());
 
 
-
         final DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders")
                 .child(currentUser.getUid());
         HashMap<String, Object> ordersMap = new HashMap<>();
@@ -146,12 +148,16 @@ public class RecivedActivity extends AppCompatActivity {
 
                 if (task.isSuccessful())
                 {
+
                     FirebaseDatabase.getInstance().getReference("Orders")
                             .child(currentUser.getUid()).updateChildren(ordersMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
+
+
+
                                         Toast.makeText(RecivedActivity.this, "your final order has been placed successfully", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(RecivedActivity.this,HomeActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -170,4 +176,7 @@ public class RecivedActivity extends AppCompatActivity {
     public void onBackPressed() {
         startActivity(new Intent(this, PaymentActivity.class));
     }
+
+
+
 }

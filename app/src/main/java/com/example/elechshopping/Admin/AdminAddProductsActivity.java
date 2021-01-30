@@ -6,9 +6,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,9 +34,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class AdminAddProductsActivity extends AppCompatActivity {
+public class AdminAddProductsActivity extends AppCompatActivity  implements AdapterView.OnItemSelectedListener{
 
-
+    String[] payment={"Credit Card","Delivery"};
+    String[] namebrand={"Apple","HP" , "Samsung" , "LG", "Dell" , "Sony" };
+    String[] namecategory={"Computer","Laptop" , "Tablets" , "Mobiles", "Headphones" , "Cameras" , "TVs" , "Other Electronics"};
 
     private String categoryName, description, price, pname,saveCurrentDate, saveCurrentTime, brand , paymentmethod, deliverytime, deliveryfee, pquantity, discount;
     private Button addNewProductButton;
@@ -46,6 +51,7 @@ public class AdminAddProductsActivity extends AppCompatActivity {
     private DatabaseReference productsRef;
     private ProgressDialog loadingBar;
     private ImageView closeTextBtn;
+    Spinner spin , spinbrand , spincategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,40 @@ public class AdminAddProductsActivity extends AppCompatActivity {
             }
         });
 
+
+/////////////// this for payment method spinner
+        //Getting the instance of Spinner and applying OnItemSelectedListener on it
+         spin = (Spinner) findViewById(R.id.spinner);
+        spin.setOnItemSelectedListener(this);
+
+//Creating the ArrayAdapter instance having the bank name list
+        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,payment);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//Setting the ArrayAdapter data on the Spinner
+        spin.setAdapter(aa);
+
+//////////////////////////////// this for brand spinner
+
+        spinbrand = (Spinner) findViewById(R.id.spinnerbrand);
+        spinbrand.setOnItemSelectedListener(this);
+        ArrayAdapter brand = new ArrayAdapter(this,android.R.layout.simple_spinner_item,namebrand);
+        brand.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinbrand.setAdapter(brand);
+
+        ///////////////////this fot category
+        spincategory = (Spinner) findViewById(R.id.spinnercategory);
+        spincategory.setOnItemSelectedListener(this);
+        ArrayAdapter category  = new ArrayAdapter(this,android.R.layout.simple_spinner_item,namecategory);
+        category.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spincategory.setAdapter(category);
+
+
+
+
+
+
+
+
      //  categoryName = getIntent().getExtras().get("category").toString();
         productImagesRef = FirebaseStorage.getInstance().getReference().child("Product Images");
         productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
@@ -71,8 +111,8 @@ public class AdminAddProductsActivity extends AppCompatActivity {
         inputProductDiscount = (EditText) findViewById(R.id.adminproduct_discount);
         inputProductDescription = (EditText) findViewById(R.id.adminproduct_description);
         inputProductPrice = (EditText) findViewById(R.id.adminproduct_price);
-        inputProductbrand = (EditText) findViewById(R.id.adminproduct_brand);
-        inputProductpaymentmethod = (EditText) findViewById(R.id.adminpaymentmethod);
+       // inputProductbrand = (EditText) findViewById(R.id.adminproduct_brand);
+       // inputProductpaymentmethod = (EditText) findViewById(R.id.adminpaymentmethod);
         inputProductdelfee = (EditText) findViewById(R.id.admindeliveryfee);
         inputProductdeltime = (EditText) findViewById(R.id.admindeliverytime);
         inputProductquantity = (EditText) findViewById(R.id.adminproduct_qnt);
@@ -118,6 +158,18 @@ public class AdminAddProductsActivity extends AppCompatActivity {
         }
     }
 
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+
+
+    }
     private void validateProductData() {
 
         description = inputProductDescription.getText().toString();
@@ -125,10 +177,13 @@ public class AdminAddProductsActivity extends AppCompatActivity {
         pname = inputProductName.getText().toString();
         deliverytime= inputProductdeltime.getText().toString();
         deliveryfee= inputProductdelfee.getText().toString();
-        paymentmethod= inputProductpaymentmethod.getText().toString();
+        //paymentmethod= inputProductpaymentmethod.getText().toString();
         pquantity= inputProductquantity.getText().toString();
-        brand= inputProductbrand.getText().toString();
+       // brand= inputProductbrand.getText().toString();
         discount= inputProductDiscount.getText().toString();
+        paymentmethod = spin.getSelectedItem().toString();
+        brand = spinbrand.getSelectedItem().toString();
+        categoryName = spincategory.getSelectedItem().toString();
 
 
         if (imageUri == null) {
@@ -162,7 +217,11 @@ public class AdminAddProductsActivity extends AppCompatActivity {
         }
         else if (TextUtils.isEmpty(paymentmethod)) {
 
-            Toast.makeText(this, "Please write product payment method", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write payment method", Toast.LENGTH_SHORT).show();
+        }
+        else if (TextUtils.isEmpty(categoryName)) {
+
+            Toast.makeText(this, "Please write category name", Toast.LENGTH_SHORT).show();
         }
 
 
