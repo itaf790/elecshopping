@@ -26,7 +26,7 @@
 
         android:foregroundGravity="center_vertical|center|center_horizontal"
         android:gravity="center|center_horizontal|center_vertical"
-        android:text="Log In  تسجيل الدخول "
+        android:text="Log In "
         android:textColor="#000000"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -40,7 +40,7 @@
         android:layout_below="@+id/textlog"
         android:background="@drawable/inputs"
         android:ems="10"
-        android:hint="E-mail | الايميل"
+        android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:padding="20dp"
         android:shadowColor="#8C7070"
@@ -57,7 +57,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/inputs"
         android:ems="10"
-        android:hint="Password | كلمة السر "
+        android:hint="Password  "
         android:inputType="textPassword"
         android:padding="20dp"
         android:shadowColor="#8C7070"
@@ -76,7 +76,7 @@
         android:background="@drawable/buttons"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Log In | تسجيل الدخول "
+        android:text="Log In "
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -125,7 +125,7 @@
 
         android:layout_marginLeft="50dp"
         android:layout_marginTop="16dp"
-        android:text="Forget Password? | نسيت كلمة السر "
+        android:text="Forget Password?  "
         android:textColor="#000000"
         android:textSize="17dp"
         android:textStyle="bold" />

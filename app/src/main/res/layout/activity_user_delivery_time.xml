@@ -30,7 +30,7 @@
         android:layout_centerVertical="false"
         android:layout_marginEnd="76dp"
         android:gravity="center|center_horizontal"
-        android:text="Delivery Time مدة التوصيل "
+        android:text="Delivery Time  "
         android:textAlignment="center"
         android:textColor="#372E2E"
         android:textSize="20dp"

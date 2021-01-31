@@ -107,7 +107,9 @@ public class AdminDiscountActivity extends AppCompatActivity {
                     userdataMap.put("overdiscount",overdiscount);
 
 
-                    RootRef.child("Cart List").child("overdiscount").updateChildren(userdataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    RootRef.child("Cart List").child("User View")
+                            .child(currentUser.getUid())
+                            .child("Products").updateChildren(userdataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
 

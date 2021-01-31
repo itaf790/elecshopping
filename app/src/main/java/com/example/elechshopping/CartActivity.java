@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -135,9 +136,14 @@ public class CartActivity extends AppCompatActivity {
                             cartViewHolder.txtProductshipped.setText("Shipped Price =  $ "+ model.getDelivery_fee());
                             cartViewHolder.txtProductDiscount.setText("Discount = % "+ model.getDiscount());
 
+
+
                             double oneTypeTotalPrice = (Integer.valueOf(model.getPrice())) * Integer.valueOf(model.getNumberquantity());
                             double oneTypeTotalShipped = (Integer.valueOf(model.getDelivery_fee())) ;
 
+
+                      //  double overdiscount = (Integer.valueOf(model.getOverdiscount())) ;
+                        // Toast.makeText(CartActivity.this, ""+overdiscount, Toast.LENGTH_SHORT).show();
 
 
                                 if (model.getDiscount().equals("")) {
@@ -188,7 +194,7 @@ public class CartActivity extends AppCompatActivity {
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()) {
 
-                                                                   Toast.makeText(CartActivity.this, "Total Price = $ "+ overTotalAmount, Toast.LENGTH_SHORT).show();
+                                                                //  Toast.makeText(CartActivity.this, "Total Price = $ "+ overTotalAmount, Toast.LENGTH_SHORT).show();
 
 
                                                                 }

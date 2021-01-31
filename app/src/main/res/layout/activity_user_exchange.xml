@@ -30,7 +30,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="76dp"
         android:gravity="center|center_horizontal"
-        android:text="Exchange Policy سياسية الارجاع"
+        android:text="Exchange Policy"
         android:textAlignment="center"
         android:textColor="#372E2E"
         android:textSize="20dp"

@@ -22,20 +22,20 @@
 
     <TextView
         android:id="@+id/addlog"
-        android:layout_width="207dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ib_close"
         android:layout_centerInParent="true"
         android:layout_marginTop="0dp"
         android:padding="10sp"
-        android:text="Log In ? تسجيل الدخول"
+        android:text="Log In ?  "
         android:textColor="@color/black"
         android:textSize="18dp" />
     <TextView
         android:id="@+id/addregister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register ? تسجيل الاشتراك "
+        android:text="Register ?   "
         android:layout_below="@id/addlog"
         android:layout_marginTop="10dp"
         android:layout_centerInParent="true"

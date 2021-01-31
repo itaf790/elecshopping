@@ -92,12 +92,14 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         progressDialog = new ProgressDialog(HomeActivity.this);
 
 
+
+        ///// hay 3shan el text computer tfta7 saf7a feha listadapter
         TextView computer=(TextView)findViewById(R.id.computer);
         computer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(HomeActivity.this, AdapterViewActivity.class);
-                startActivity(myIntent);
+              //  Intent myIntent = new Intent(HomeActivity.this, AdapterViewActivity.class);
+              //  startActivity(myIntent);
 
 
             }
@@ -256,7 +258,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
-
+///////////////////////// hday 3shan tjebli el details ta3un name and price ll home mn products item
 
     @Override
     protected void onStart() {

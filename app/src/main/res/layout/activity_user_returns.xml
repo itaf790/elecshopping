@@ -29,7 +29,7 @@
         android:layout_centerVertical="false"
         android:layout_marginEnd="76dp"
         android:gravity="center|center_horizontal"
-        android:text="Returns Policy سياسة التبديل"
+        android:text="Returns Policy "
         android:layout_marginTop="40dp"
         android:textAlignment="center"
         android:textColor="#372E2E"

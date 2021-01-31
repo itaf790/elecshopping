@@ -30,7 +30,7 @@
         android:layout_marginEnd="76dp"
         android:layout_marginTop="40dp"
         android:gravity="center|center_horizontal"
-        android:text="Payment Method طريقة الدفع "
+        android:text="Payment Method "
         android:textAlignment="center"
         android:textColor="#372E2E"
         android:textSize="20dp"

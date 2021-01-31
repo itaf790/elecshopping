@@ -154,4 +154,16 @@ dependencies {
 
 
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //// this for chat
+
+
+    implementation 'com.firebase:firebase-client-android:2.5.2+'
+    implementation 'com.firebaseui:firebase-ui-firestore:4.1.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.prabhat1707:Firebase-Push-Notification-Api-:1.1'
+    implementation 'com.google.firebase:firebase-analytics:18.0.1'
+
+    implementation 'com.firebaseui:firebase-ui:0.6.0'
 }

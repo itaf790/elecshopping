@@ -44,7 +44,7 @@ public class AdapterViewActivity extends AppCompatActivity {
         productImage = (ImageView) findViewById(R.id.image_View);
         productName = (TextView) findViewById(R.id.image_name);
 
-
+        getProductDetails(productID);
 
     }
 
@@ -58,6 +58,7 @@ public class AdapterViewActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     Products products = dataSnapshot.getValue(Products.class);
 
+                    if (products.getPname().equals("computer"))
                     productName.setText(products.getPname());
                     Picasso.get().load(products.getImage()).into(productImage);
 
